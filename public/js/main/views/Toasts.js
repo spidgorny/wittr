@@ -1,6 +1,6 @@
 import parseHTML from './../../utils/parseHTML';
 import toastTemplate from './../../../../templates/toast.hbs';
-import defaults from 'lodash/object/defaults';
+import defaults from 'lodash/defaults';
 import transition from 'simple-transition';
 import closest from 'closest';
 

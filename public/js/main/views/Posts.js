@@ -1,5 +1,5 @@
 import postTemplate from './../../../../templates/post.hbs';
-import toArray from 'lodash/lang/toArray';
+import toArray from 'lodash/toArray';
 import parseHTML from './../../utils/parseHTML';
 import humanReadableTimeDiff from './../../utils/humanReadableTimeDiff';
 

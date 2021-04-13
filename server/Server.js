@@ -9,7 +9,7 @@ import http from 'http';
 import url from 'url';
 import net from 'net';
 import Throttle from 'throttle';
-import random from 'lodash/number/random';
+import random from 'lodash/random';
 import indexTemplate from './templates/index';
 import postsTemplate from './templates/posts';
 import postTemplate from './templates/post';
@@ -70,8 +70,16 @@ export default class Server {
       maxAge: 0
     };
 
-    this._exposedServer.on('connection', socket => this._onServerConnection(socket));
-    this._wss.on('connection', ws => this._onWsConnection(ws));
+    this._exposedServer.on('connection', (socket, req) => {
+      // console.log(req);
+      // socket.upgradeReq = req;
+      this._onServerConnection(socket)
+    });
+    this._wss.on('connection', (ws, req) => {
+      console.log(req.url);
+      ws.upgradeReq = req;
+      this._onWsConnection(ws)
+    });
 
     this._app.use(compressor);
     this._app.use('/js', express.static('../public/js', staticOptions));
