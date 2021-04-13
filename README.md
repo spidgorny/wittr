@@ -4,6 +4,12 @@ This is a silly little demo app for an offline-first course.
 
 You could run the app either using machine dependnecies, or using docker
 
+# UPDATE 2021
+
+This branch has all dependencies upgraded to the latest version.
+Gulpfile needed to be upgraded as well.
+Runs in Node v14+ now.
+
 ## Running using local machine
 
 ### Installing
